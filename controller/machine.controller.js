@@ -35,7 +35,7 @@ class MachineController {
 
   async getMachines(_, res) {
     try {
-      const selectResp = await pool.query('SELECT * FROM CoffeeMachine');
+      const selectResp = await pool.query('SELECT * FROM CoffeeMachine ORDER BY id');
 
       res.json(selectResp.rows);
     } catch(error) {
